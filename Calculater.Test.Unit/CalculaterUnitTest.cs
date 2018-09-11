@@ -49,9 +49,7 @@ namespace Calculater.Test.Unit
         public void Accumulator_3addto3_Acc6()
         {
             var uut = new Calculater();
-            uut.Add(3, 3);
-            bool result = uut.Accumulator == 3 + 3;
-            Assert.IsTrue(result);
+            Assert.That(uut.Add(3, 3), uut.Accumulator.EqualTo(6));
         }
 
         [Test]
