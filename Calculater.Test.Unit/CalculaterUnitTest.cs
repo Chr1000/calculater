@@ -49,15 +49,19 @@ namespace Calculater.Test.Unit
         public void Accumulator_3addto3_Acc6()
         {
             var uut = new Calculater();
-            Assert.That(uut.Add(3, 3), uut.Accumulator.EqualTo(6));
+            uut.Add(3, 3);
+            bool result = uut.Accumulator == 3 + 3;
+            Assert.IsTrue(result);
         }
 
         [Test]
         public void Accumulator_clear()
         {
             var uut = new Calculater();
-            Assert.That(uut.Add(3, 3), uut.Accumulator.EqualTo(6));
-            Assert.That(uut.Clear, uut.Accumulator.EqualTo(0));
+            uut.Add(5, 5);
+            uut.Clear();
+            bool result = uut.Accumulator == 0;
+            Assert.IsTrue(result);
         }
 
     }
