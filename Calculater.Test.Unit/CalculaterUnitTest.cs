@@ -51,17 +51,19 @@ namespace Calculater.Test.Unit
         [Test]
         public void Accumulator_3addto3_Acc6()
         {
-            uut.Add(3, 3);
-            bool result = uut.Accumulator == 3 + 3;
+            Calculator _uut = new Calculator(); 
+            _uut.Add(3, 3);
+            bool result = _uut.Accumulator == 3 + 3;
             Assert.IsTrue(result);
         }
 
         [Test]
         public void Accumulator_clear()
         {
-            uut.Add(5, 5);
-            uut.Clear();
-            bool result = uut.Accumulator == 0;
+            Calculator _uut = new Calculator();
+            _uut.Add(5, 5);
+            _uut.Clear();
+            bool result = _uut.Accumulator == 0;
             Assert.IsTrue(result);
         }
 
