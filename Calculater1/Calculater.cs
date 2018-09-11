@@ -7,21 +7,33 @@ using System.Threading.Tasks;
 
 namespace Calculater
 {
+
     public class Calculater
     {
+        public double Accumulator {get; private set; }
+
         public double Add(double a, double b)
         {
+            Accumulator.set = a + b;
             return a + b;
         }
 
         public double Subtract(double a, double b)
         {
+            Accumulator.set = a - b;
             return a - b;
         }
 
         public double Multiply(double a, double b)
         {
+            Accumulator.set = a * b;
             return a * b;
+        }
+
+        public double Divide(double a, double b)
+        {
+            Accumulator.set = a / b;
+            return a / b;
         }
 
         public double Power(double x, double exp)
