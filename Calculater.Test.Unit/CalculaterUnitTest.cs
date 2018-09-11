@@ -37,6 +37,8 @@ namespace Calculater.Test.Unit
             var uut = new Calculater();
             Assert.That(uut.Power(3, 3), Is.EqualTo(27));
         }
+
+
     }
 
 }

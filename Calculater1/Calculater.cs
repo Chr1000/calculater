@@ -15,31 +15,31 @@ namespace Calculater
         public double Add(double a, double b)
         {
             Accumulator = a + b;
-            return (Accumulator = a + b);
+            return Accumulator;
         }
 
         public double Subtract(double a, double b)
         {
             Accumulator = a - b;
-            return a - b;
+            return Accumulator;
         }
 
         public double Multiply(double a, double b)
         {
             Accumulator = a * b;
-            return a * b;
+            return Accumulator;
         }
 
         public double Divide(double a, double b)
         {
             Accumulator = a / b;
-            return a / b;
+            return Accumulator;
         }
 
         public double Power(double x, double exp)
         {
             Accumulator = Math.Pow(x, exp);
-            return Math.Pow(x, exp);
+            return Accumulator;
         }
 
         public override string ToString()
