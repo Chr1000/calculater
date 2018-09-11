@@ -45,6 +45,20 @@ namespace Calculater.Test.Unit
             Assert.That(uut.Power(3, 3), Is.EqualTo(27));
         }
 
+        [Test]
+        public void Accumulator_3addto3_Acc6()
+        {
+            var uut = new Calculater();
+            Assert.That(uut.Add(3, 3), uut.Accumulator.EqualTo(6));
+        }
+
+        [Test]
+        public void Accumulator_clear()
+        {
+            var uut = new Calculater();
+            Assert.That(uut.Add(3, 3), uut.Accumulator.EqualTo(6));
+            Assert.That(uut.Clear, uut.Accumulator.EqualTo(0));
+        }
 
     }
 
