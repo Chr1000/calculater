@@ -32,6 +32,13 @@ namespace Calculater.Test.Unit
         }
 
         [Test]
+        public void Divide_10and5_return2()
+        {
+            var uut = new Calculater();
+            Assert.That(uut.Divide(10, 5), Is.EqualTo(2));
+        }
+
+        [Test]
         public void Power_3and3_return27()
         {
             var uut = new Calculater();
