@@ -29,7 +29,7 @@ namespace Calculater.Test.Unit
         [TestCase(3, 2, 1)]
         [TestCase(-3, -2, -1)]
         [TestCase(-3, 2, -5)]
-        public void Subtract_Substract6and4_return2(int a, int b, int result)
+        public void Subtract_SubstractAandB_returnResult(int a, int b, int result)
         {
             Assert.That(uut.Subtract(a, b), Is.EqualTo(result));
         }
@@ -37,7 +37,7 @@ namespace Calculater.Test.Unit
         [TestCase(3, 2, 6)]
         [TestCase(-3, -2, 6)]
         [TestCase(-3, 2, -6)]
-        public void Multiply_4and3_return12(int a, int b, int result)
+        public void Multiply_AandB_returnResult(int a, int b, int result)
         {
             Assert.That(uut.Multiply(a, b), Is.EqualTo(result));
         }
@@ -45,7 +45,7 @@ namespace Calculater.Test.Unit
         [TestCase(10, 5, 2)]
         [TestCase(15, 5, 3)]
         [TestCase(8, 2, 4)]
-        public void Divide_10and5_return2(int a, int b, int result)
+        public void Divide_AandB_returnResult(int a, int b, int result)
         {
             Assert.That(uut.Divide(a, b), Is.EqualTo(result));
         }
@@ -53,7 +53,7 @@ namespace Calculater.Test.Unit
         [TestCase(2, 3, 8)]
         [TestCase(3, 3, 27)]
         [TestCase(4, 2, 16)]
-        public void Power_3and3_return27(int a, int b, int result)
+        public void Power_AandB_returnResult(int a, int b, int result)
         {
             Assert.That(uut.Power(a, b), Is.EqualTo(result));
         }
@@ -61,7 +61,7 @@ namespace Calculater.Test.Unit
         [TestCase(10, 5, 15)]
         [TestCase(15, 5, 20)]
         [TestCase(8, 2, 10)]
-        public void Accumulator_3addto3_Acc6(int a, int b, double result)
+        public void Accumulator_AaddtoB_AccResult(int a, int b, double result)
         {
             uut.Clear();
             uut.Add(a, b);
