@@ -18,53 +18,67 @@ namespace Calculater.Test.Unit
             uut = new Calculater();
         }
 
-        [Test]
-        public void Add_Add2and4return6()
+        [TestCase(3, 2, 5)]
+        [TestCase(-3, -2, -5)]
+        [TestCase(-3, 2, -1)]
+        public void Add_Add2and4return6(int a, int b, int result)
         {
-            Assert.That(uut.Add(2, 4), Is.EqualTo(6));
+            Assert.That(uut.Add(a, b), Is.EqualTo(result));
         }
 
-        [Test]
-        public void Subtract_Substract6and4_return2()
+        [TestCase(3, 2, 1)]
+        [TestCase(-3, -2, -1)]
+        [TestCase(-3, 2, -5)]
+        public void Subtract_Substract6and4_return2(int a, int b, int result)
         {
-            Assert.That(uut.Subtract(6, 4), Is.EqualTo(2));
+            Assert.That(uut.Subtract(a, b), Is.EqualTo(result));
         }
 
-        [Test]
-        public void Multiply_4and3_return12()
+        [TestCase(3, 2, 6)]
+        [TestCase(-3, -2, 6)]
+        [TestCase(-3, 2, -6)]
+        public void Multiply_4and3_return12(int a, int b, int result)
         {
-            Assert.That(uut.Multiply(3, 4), Is.EqualTo(12));
+            Assert.That(uut.Multiply(a, b), Is.EqualTo(result));
         }
 
-        [Test]
-        public void Divide_10and5_return2()
+        [TestCase(10, 5, 2)]
+        [TestCase(15, 5, 3)]
+        [TestCase(8, 2, 4)]
+        public void Divide_10and5_return2(int a, int b, int result)
         {
-            Assert.That(uut.Divide(10, 5), Is.EqualTo(2));
+            Assert.That(uut.Divide(a, b), Is.EqualTo(result));
         }
 
-        [Test]
-        public void Power_3and3_return27()
+        [TestCase(2, 3, 8)]
+        [TestCase(2, -3, 0.125)]
+        [TestCase(-2, -3, -0.125)]
+        public void Power_3and3_return27(int a, int b, int result)
         {
-            Assert.That(uut.Power(3, 3), Is.EqualTo(27));
+            Assert.That(uut.Power(a, b), Is.EqualTo(result));
         }
 
-        [Test]
-        public void Accumulator_3addto3_Acc6()
+        [TestCase(10, 5, 2)]
+        [TestCase(15, 5, 3)]
+        [TestCase(8, 2, 4)]
+        public void Accumulator_3addto3_Acc6(int a, int b, double result)
         {
             uut.Clear();
-            uut.Add(3, 3);
-            bool result = uut.Accumulator == 3 + 3;
-            Assert.IsTrue(result);
+            uut.Add(a, b);
+            bool sumResult = uut.Accumulator == result;
+            Assert.IsTrue(sumResult);
         }
 
-        [Test]
-        public void Accumulator_clear()
+        [TestCase(10, 5, 0)]
+        [TestCase(15, 5, 0)]
+        [TestCase(8, 2, 0)]
+        public void Accumulator_clear(int a, int b, double result)
         {
             uut.Clear();
-            uut.Add(5, 5);
+            uut.Add(a, b);
             uut.Clear();
-            bool result = uut.Accumulator == 0;
-            Assert.IsTrue(result);
+            bool sumResult = uut.Accumulator == result;
+            Assert.IsTrue(sumResult);
         }
 
     }
