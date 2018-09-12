@@ -51,16 +51,16 @@ namespace Calculater.Test.Unit
         }
 
         [TestCase(2, 3, 8)]
-        [TestCase(2, -3, 0.125)]
-        [TestCase(-2, -3, -0.125)]
+        [TestCase(3, 3, 27)]
+        [TestCase(4, 2, 16)]
         public void Power_3and3_return27(int a, int b, int result)
         {
             Assert.That(uut.Power(a, b), Is.EqualTo(result));
         }
 
-        [TestCase(10, 5, 2)]
-        [TestCase(15, 5, 3)]
-        [TestCase(8, 2, 4)]
+        [TestCase(10, 5, 15)]
+        [TestCase(15, 5, 20)]
+        [TestCase(8, 2, 10)]
         public void Accumulator_3addto3_Acc6(int a, int b, double result)
         {
             uut.Clear();
