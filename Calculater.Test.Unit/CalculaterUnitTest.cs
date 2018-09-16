@@ -21,6 +21,7 @@ namespace Calculater.Test.Unit
         [TestCase(3, 2, 5)]
         [TestCase(-3, -2, -5)]
         [TestCase(-3, 2, -1)]
+        [TestCase(-3, 1, -2)]
         public void Add_Add2and4return6(int a, int b, int result)
         {
             Assert.That(uut.Add(a, b), Is.EqualTo(result));
@@ -29,6 +30,7 @@ namespace Calculater.Test.Unit
         [TestCase(3, 2, 1)]
         [TestCase(-3, -2, -1)]
         [TestCase(-3, 2, -5)]
+        [TestCase(-3, 3, -6)]
         public void Subtract_SubstractAandB_returnResult(int a, int b, int result)
         {
             Assert.That(uut.Subtract(a, b), Is.EqualTo(result));
