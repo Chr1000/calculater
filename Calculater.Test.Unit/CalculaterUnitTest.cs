@@ -39,6 +39,7 @@ namespace Calculater.Test.Unit
         [TestCase(3, 2, 6)]
         [TestCase(-3, -2, 6)]
         [TestCase(-3, 2, -6)]
+        [TestCase(-3, -3, 9)]
         public void Multiply_AandB_returnResult(int a, int b, int result)
         {
             Assert.That(uut.Multiply(a, b), Is.EqualTo(result));
@@ -47,6 +48,7 @@ namespace Calculater.Test.Unit
         [TestCase(10, 5, 2)]
         [TestCase(15, 5, 3)]
         [TestCase(8, 2, 4)]
+        [TestCase(22, 2, 11)]
         public void Divide_AandB_returnResult(int a, int b, int result)
         {
             Assert.That(uut.Divide(a, b), Is.EqualTo(result));
@@ -63,6 +65,7 @@ namespace Calculater.Test.Unit
         [TestCase(10, 5, 15)]
         [TestCase(15, 5, 20)]
         [TestCase(8, 2, 10)]
+        [TestCase(1, 2, 3)]
         public void Accumulator_AaddtoB_AccResult(int a, int b, double result)
         {
             uut.Clear();
@@ -74,6 +77,7 @@ namespace Calculater.Test.Unit
         [TestCase(10, 5, 0)]
         [TestCase(15, 5, 0)]
         [TestCase(8, 2, 0)]
+        [TestCase(5, 5, 0)]
         public void Accumulator_clear(int a, int b, double result)
         {
             uut.Clear();
